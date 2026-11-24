@@ -1,0 +1,16 @@
+services:
+  api:
+    build: .
+    image: fiap-volkswagen-api:local
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      PORT: "8000"
+      MONITOR_DB_PATH: /app/runtime/previsoes.sqlite3
+      MONITOR_REPORT_DIR: /app/runtime/relatorios
+    volumes:
+      - historico_previsoes:/app/runtime
+    restart: unless-stopped
+
+volumes:
+  historico_previsoes:

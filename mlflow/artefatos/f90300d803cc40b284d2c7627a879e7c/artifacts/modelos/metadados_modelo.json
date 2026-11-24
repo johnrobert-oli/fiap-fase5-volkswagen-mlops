@@ -1,0 +1,21 @@
+{
+  "modelo": "ARIMA",
+  "ordem": [
+    2,
+    1,
+    0
+  ],
+  "ticker": "VOW3.DE",
+  "alvo": "Close",
+  "moeda": "EUR",
+  "horizonte": "1 pregao",
+  "parametros_ajustados_ate": "2024-12-30",
+  "observacoes_incorporadas_ate": "2026-11-16",
+  "base_sha256": "b3c996ebea6c9202155f15bfe5b3aab18ba3f34b0fe8419be9ba6bf77c6963a7",
+  "modelo_sha256": "82be1c3099e4e7e35bf350386ddee5b767799e40108366e9d07adf9942f2640f",
+  "python": "3.13.18",
+  "statsmodels": "0.15.0",
+  "numpy": "2.4.6",
+  "pandas": "2.2.3",
+  "status": "Experimental; nao superou a baseline no teste"
+}

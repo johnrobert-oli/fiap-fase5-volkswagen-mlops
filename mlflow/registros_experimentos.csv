@@ -1,0 +1,8 @@
+Etapa,Modelo,Run ID
+validacao,"ARIMA(2,1,0)",3a7e7fd7ec884a789d12fdb540e0df4c
+validacao,"ARIMA(0,1,1)",d7c304704ee84e5a9e5f1e13b86ee32a
+validacao,"ARIMA(1,1,0)",d7c317b0d08f4dbc8a6a216aff4f58f6
+validacao,"ARIMA(1,1,1)",4ab8e94324d6489abc6dbfec8ee7d827
+validacao,Baseline,ccd56edb16734ac4ac9b363c02b5f679
+teste,Baseline,25dc010342184aeba2c529ddb4458cee
+teste,"ARIMA(2,1,0)",6c489496181e4713854444a140f5df19
