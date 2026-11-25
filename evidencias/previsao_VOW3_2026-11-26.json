@@ -1,0 +1,13 @@
+{
+  "ticker": "VOW3.DE",
+  "moeda": "EUR",
+  "dados_ate": "2026-11-25",
+  "data_prevista": "2026-11-26",
+  "fechamento_previsto": 65.5820836523375,
+  "baseline_ultimo_fechamento": 65.23999786376953,
+  "novas_observacoes": 7,
+  "versao_modelo": "82be1c3099e4e7e35bf350386ddee5b767799e40108366e9d07adf9942f2640f",
+  "pregao_alvo_ja_encerrado": false,
+  "status_modelo": "Experimental; nao superou a baseline no teste",
+  "previsao_id": "cdd18ae8-ee9c-48c5-8997-2e698364d092"
+}
