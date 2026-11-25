@@ -1,0 +1,30 @@
+{
+  "gerado_em": "2026-11-25T18:20:02.534994+00:00",
+  "status": "avaliado",
+  "fonte_reais": "Yahoo Finance via yfinance",
+  "grupos": [
+    {
+      "versao_modelo": "82be1c3099e4e7e35bf350386ddee5b767799e40108366e9d07adf9942f2640f",
+      "origem_entradas": "dados_informados_pelo_usuario",
+      "quantidade": 1,
+      "metricas": {
+        "ARIMA": {
+          "mae_eur": 3.0916527737583905,
+          "rmse_eur": 3.0916527737583905,
+          "mape_percentual": 4.738891592569032
+        },
+        "Baseline": {
+          "mae_eur": 2.8799968637695343,
+          "rmse_eur": 2.8799968637695343,
+          "mape_percentual": 4.414464987848989
+        }
+      }
+    }
+  ],
+  "registros_encontrados": 2,
+  "previsoes_elegiveis": 1,
+  "coleta_sha256": "01efe12561255505a9466d0330fdd1abbf4d466c5f61ee962305d03a868ea042",
+  "previsoes_com_real_validado": 1,
+  "aguardando_real_validado": 0,
+  "observacao": "Métricas descritivas da amostra disponível. Preços informados pelo usuário não foram verificados na origem."
+}
