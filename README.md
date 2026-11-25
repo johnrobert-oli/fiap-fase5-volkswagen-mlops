@@ -79,7 +79,7 @@ O experimento `FIAP_Fase5_Volkswagen` registra no MLflow as cinco execuções de
 
 ### Operação da API
 
-A rota `/metrics` expõe contadores e tempos de resposta em formato Prometheus. Para cada previsão emitida, a API guarda em SQLite o horário de criação, os dados de entrada, a versão do modelo, a previsão e a referência. O volume Docker `historico_previsoes` mantém o banco e os relatórios entre reinicializações.
+A rota `/metrics` expõe contadores e tempos de resposta em formato Prometheus. Para cada previsão emitida, a API guarda o horário de criação, os dados de entrada, a versão do modelo, a previsão e a referência. Com a variável de ambiente `DATABASE_URL` configurada, a API e o avaliador usam o mesmo PostgreSQL. Configure essa variável com a URL de conexão do Neon no Render. Sem essa variável, o Docker Compose usa SQLite e o volume local `historico_previsoes`. Os arquivos de relatório são gravados em `MONITOR_REPORT_DIR`. No Render Free, exporte os arquivos que deseja conservar. O histórico de previsões fica no PostgreSQL.
 
 ### Avaliar as previsões após o fechamento
 

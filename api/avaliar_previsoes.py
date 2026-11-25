@@ -1,7 +1,6 @@
 
 import json
 import os
-import sqlite3
 import hashlib
 from pathlib import Path
 from datetime import timedelta
@@ -11,7 +10,7 @@ import pandas as pd
 import yfinance as yf
 import exchange_calendars as xcals
 
-from registros import caminho_banco
+from registros import caminho_banco, ler_previsoes
 
 def agora_utc():
     return pd.Timestamp.now(tz="UTC")
@@ -40,24 +39,7 @@ def avaliar():
         )
         return relatorio
 
-    if not banco.exists():
-        relatorio["motivo"] = "Nenhuma previsão registrada neste ambiente."
-        return salvar()
-
-    with sqlite3.connect(str(banco)) as conexao:
-        existe = conexao.execute(
-            "SELECT name FROM sqlite_master "
-            "WHERE type='table' AND name='previsoes'"
-        ).fetchone()
-
-        if not existe:
-            relatorio["motivo"] = "Tabela de previsões ainda não criada."
-            return salvar()
-
-        previsoes = pd.read_sql_query(
-            "SELECT * FROM previsoes", conexao
-        )
-
+    previsoes = pd.DataFrame.from_records(ler_previsoes())
     relatorio["registros_encontrados"] = len(previsoes)
 
     if previsoes.empty:

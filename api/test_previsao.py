@@ -1,3 +1,4 @@
+import os
 
 import json
 import numpy as np
@@ -11,7 +12,7 @@ from main import app
 instante = pd.Timestamp("2026-11-19T22:00:00Z")
 
 with patch("previsao.agora_utc", return_value=instante):
-    with TestClient(app) as cliente:
+    with patch.dict(os.environ, DATABASE_URL="", MONITOR_DB_PATH=":memory:"), TestClient(app) as cliente:
         # 1. Previsão usando o modelo salvo
         resposta = cliente.post("/prever", json={"ticker": "VOW3.DE"})
         assert resposta.status_code == 200, resposta.text

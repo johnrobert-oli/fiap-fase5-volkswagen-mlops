@@ -12,7 +12,7 @@ import pandas as pd
 import avaliar_previsoes as avaliador
 from registros import registrar_previsao
 
-with tempfile.TemporaryDirectory() as pasta:
+with patch.dict(os.environ, DATABASE_URL=""), tempfile.TemporaryDirectory() as pasta:
     banco = Path(pasta) / "teste.sqlite3"
     relatorios = Path(pasta) / "relatorios"
     os.environ["MONITOR_DB_PATH"] = str(banco)

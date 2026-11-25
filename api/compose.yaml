@@ -5,6 +5,7 @@ services:
     ports:
       - "127.0.0.1:8000:8000"
     environment:
+      DATABASE_URL: "${DATABASE_URL:-}"
       PORT: "8000"
       MONITOR_DB_PATH: /app/runtime/previsoes.sqlite3
       MONITOR_REPORT_DIR: /app/runtime/relatorios

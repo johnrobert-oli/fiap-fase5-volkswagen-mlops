@@ -1,3 +1,4 @@
+from unittest.mock import patch
 
 import os
 import json
@@ -9,7 +10,7 @@ from fastapi.testclient import TestClient
 from main import app
 
 # Os testes não escrevem no histórico real da aplicação
-with tempfile.TemporaryDirectory() as pasta:
+with patch.dict(os.environ, DATABASE_URL=""), tempfile.TemporaryDirectory() as pasta:
     banco = Path(pasta) / "teste.sqlite3"
     os.environ["MONITOR_DB_PATH"] = str(banco)
 

@@ -1,3 +1,5 @@
+from unittest.mock import patch
+import os
 
 from fastapi.testclient import TestClient
 from prometheus_client.parser import text_string_to_metric_families
@@ -10,7 +12,7 @@ def obter_valor(texto, nome, etiquetas):
                 return amostra.value
     raise AssertionError(f"Métrica não encontrada: {nome} {etiquetas}")
 
-with TestClient(app) as cliente:
+with patch.dict(os.environ, DATABASE_URL="", MONITOR_DB_PATH=":memory:"), TestClient(app) as cliente:
     valida = cliente.post("/prever", json={"ticker": "VOW3.DE"})
     assert valida.status_code == 200, valida.text
 
